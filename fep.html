@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workflow Fatturazione Elettronica Passiva</title>
+<style>
+:root{--yellow:#FDB913;--text:#1e293b;--muted:#64748b;--border:#cbd5e1;--soft:#f8fafc}
+*{box-sizing:border-box} body{margin:0;padding:14px 20px;font-family:'Segoe UI',Tahoma,sans-serif;color:var(--text);background:#fff}
+.page{max-width:1400px;margin:auto}.header{padding-bottom:10px;margin-bottom:14px;border-bottom:2px solid var(--yellow);font-size:18px;font-weight:500;text-transform:uppercase}
+.content{display:grid;grid-template-columns:minmax(760px,1fr) 1px 300px;gap:22px;align-items:stretch}
+.separator{background:var(--border);min-height:430px}.flow-panel{border:1px solid var(--border);border-radius:12px;padding:22px 18px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05);overflow:visible}
+.workflow{
+    position:relative;
+    display:grid;
+    grid-template-columns:180px 70px 180px 70px 180px;
+    grid-template-rows:100px 58px 100px 58px 90px;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:500px;
+}
+.card{z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#fff;border:1px solid var(--border);border-bottom:3px solid var(--yellow);border-radius:8px;padding:12px;font-weight:700;min-height:88px}
+.card.sub{width:160px;min-height:78px;font-size:12px}.icon{width:28px;height:28px;margin-bottom:6px}
+.sdi{grid-column:1;grid-row:1}.sync{grid-column:3;grid-row:1}.monitor{grid-column:3;grid-row:3}.tools{grid-column:5;grid-row:1}
+.contab{grid-column:5;grid-row:3}
+.dati{grid-column:1;grid-row:5;justify-self:center}.flussi{grid-column:3;grid-row:5;justify-self:center}.scarti{grid-column:5;grid-row:5;justify-self:center}
+.arrow{display:flex;align-items:center;justify-content:center}.arrow svg{width:56px;height:18px}.arrow line{stroke:var(--yellow);stroke-width:1.25}.a1{grid-column:2;grid-row:1}.a2{grid-column:4;grid-row:1}
+.side-panel{padding:8px 0}.side-title{font-size:13px;font-weight:800;text-transform:uppercase;margin-bottom:12px}.side-list{display:flex;flex-direction:column;gap:10px}
+.side-item{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--border);border-bottom:3px solid var(--yellow);border-radius:8px;background:#fff;font-size:12px;font-weight:700}.side-icon{width:22px;height:22px}
+.kpi-section{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:0}.kpi-card{background:#fff;border:1px solid var(--border);border-bottom:3px solid var(--yellow);border-radius:8px;padding:14px}
+.kpi-title{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase}.kpi-value{margin-top:4px;font-size:24px;font-weight:600}.kpi-detail{margin-top:4px;font-size:11px;color:var(--muted)}
+@media(max-width:1050px){.scroll{overflow-x:auto}.content,.kpi-section{min-width:1050px}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="header">Workflow Fatturazione Elettronica Passiva</div>
+<div class="scroll">
+<div class="content">
+<div class="flow-panel">
+<div class="workflow">
+<div class="card sdi"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 18h10a4 4 0 0 0 .6-7.96A5.5 5.5 0 0 0 7.2 8.3 4.5 4.5 0 0 0 7 18z"/></svg>SDI</div>
+<div class="arrow a1"><svg viewBox="0 0 56 18"><line x1="2" y1="9" x2="54" y2="9" stroke="#FDB913" stroke-width="1.25"/></svg></div>
+<div class="card sync"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19.5 12l3-3m-3 3-3-3M4.5 12l-3 3m3-3 3 3M19.5 12a7.5 7.5 0 0 0-13-5M4.5 12a7.5 7.5 0 0 0 13 5"/></svg>Sync</div>
+<div class="arrow" style="grid-column:4;grid-row:1">
+    <svg viewBox="0 0 56 18" aria-hidden="true">
+        <line x1="2" y1="9" x2="54" y2="9" stroke="#FDB913" stroke-width="1.25"/>
+    </svg>
+</div>
+
+<div class="card tools">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M11.42 15.17 17.25 21A2.65 2.65 0 0 0 21 17.25l-5.88-5.88M14 10l-4 4M5 7l2-2 4 4-2 2-4-4Z"/>
+    </svg>
+    Tools
+</div>
+
+<!-- Linea semplice verticale tra Sync e Monitor FEP -->
+<div style="grid-column: 3; grid-row: 2; display: flex; align-items: center; justify-content: center;">
+    <svg viewBox="0 0 18 56" style="width: 18px; height: 56px;" aria-hidden="true">
+        <line x1="9" y1="4" x2="9" y2="52" stroke="#FDB913" stroke-width="1.25" stroke-linecap="round"/>
+    </svg>
+</div>
+
+<div class="card monitor"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m21 21-5-5m0 0a7 7 0 1 0-10-10 7 7 0 0 0 10 10Z"/></svg>Monitor FEP</div>
+
+<!-- Linea semplice orizzontale tra Monitor FEP e Contab. FEP -->
+<div style="grid-column: 4; grid-row: 3; display: flex; align-items: center; justify-content: center;">
+    <svg viewBox="0 0 56 18" style="width: 56px; height: 18px;" aria-hidden="true">
+        <line x1="2" y1="9" x2="54" y2="9" stroke="#FDB913" stroke-width="1.25"/>
+    </svg>
+</div>
+
+<div class="card contab"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg>Contab. FEP</div>
+
+<!-- Linea semplice verticale tra Monitor FEP e Flussi FEP -->
+<div style="grid-column: 3; grid-row: 4; display: flex; align-items: center; justify-content: center;">
+    <svg viewBox="0 0 18 56" style="width: 18px; height: 56px;" aria-hidden="true">
+        <line x1="9" y1="4" x2="9" y2="52" stroke="#FDB913" stroke-width="1.25" stroke-linecap="round"/>
+    </svg>
+</div>
+
+<div class="card sub dati"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg>Dati FEP</div>
+
+<!-- Linea semplice orizzontale tra Dati FEP e Flussi FEP -->
+<div style="grid-column: 2; grid-row: 5; display: flex; align-items: center; justify-content: center;">
+    <svg viewBox="0 0 56 18" style="width: 56px; height: 18px;" aria-hidden="true">
+        <line x1="2" y1="9" x2="54" y2="9" stroke="#FDB913" stroke-width="1.25"/>
+    </svg>
+</div>
+
+<div class="card sub flussi"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>Flussi FEP</div>
+
+<!-- Linea semplice orizzontale tra Flussi FEP e Scarti FEP -->
+<div style="grid-column: 4; grid-row: 5; display: flex; align-items: center; justify-content: center;">
+    <svg viewBox="0 0 56 18" style="width: 56px; height: 18px;" aria-hidden="true">
+        <line x1="2" y1="9" x2="54" y2="9" stroke="#FDB913" stroke-width="1.25"/>
+    </svg>
+</div>
+
+<div class="card sub scarti"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 9v4m0 4h.01M10 3 3 17a2 2 0 0 0 2 3h14a2 2 0 0 0 2-3L14 3a2 2 0 0 0-4 0Z"/></svg>Scarti FEP</div>
+</div>
+</div>
+<div class="separator"></div>
+<aside class="side-panel">
+<div class="side-title">Configurazione e collegamenti</div>
+<div class="side-list">
+<div class="side-item"><svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 3h14v18H5zM8 7h8M8 11h5M8 15h8"/></svg>Causali contabilizzazione FEP</div>
+<div class="side-item"><svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg>Parametri FEP</div>
+<div class="side-item"><svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 14l4-4M7 17l-2 2a4 4 0 0 1-6-6l3-3a4 4 0 0 1 6 0M17 7l2-2a4 4 0 0 1 6 6l-3 3a4 4 0 0 1-6 0"/></svg>Link</div>
+</div>
+</aside>
+</div>
+<div class="kpi-section">
+<div class="kpi-card"><div class="kpi-title">FEP scaricate</div><div class="kpi-value">2.184</div><div class="kpi-detail">Documenti ricevuti da SDI</div></div>
+<div class="kpi-card"><div class="kpi-title">FEP in errore</div><div class="kpi-value">17</div><div class="kpi-detail">Documenti con anomalie o scarti</div></div>
+<div class="kpi-card"><div class="kpi-title">FEP contabilizzate</div><div class="kpi-value">1.963</div><div class="kpi-detail">Documenti registrati in contabilità</div></div>
+<div class="kpi-card"><div class="kpi-title">FEP da contabilizzare</div><div class="kpi-value">204</div><div class="kpi-detail">Documenti ancora da processare</div></div>
+</div>
+</div>
+</div>
+</body>
+</html>
